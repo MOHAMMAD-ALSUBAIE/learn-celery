@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+ django:
+  container_name: django
+  build:
+   context: ./blog  # this will looking for docker file inside blog to build image
+  command: python manage.py runserver 0.0.0.0:8000
+  volumes:
+    - ./blog:/usr/src/app/
+  ports:
+    - 8001:8000
+  environment:
+    - DEBUG=1
+    - SECRET_KEY=E3232423242324
+    - ALLOWED_HOSTS=localhost,127.0.0.1
+    

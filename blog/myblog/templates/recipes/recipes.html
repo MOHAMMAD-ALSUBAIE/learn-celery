@@ -1,0 +1,27 @@
+hello form the list of {{ recipes }}
+
+
+<table>
+<thead>
+    <tr>
+        <th> catogry</th>
+        <th> recipe</th>
+        <th> url</th>
+
+    </tr>
+</thead>
+<tbody>
+    {% for recipe in recipes %}
+      <tr>
+        <td>{{recipe.Category}}</td>
+
+        <td>{{recipe.name}}</td>
+        <td><a href='{% url "recipe" recipe.id  %}'>detail page</a></td>
+
+
+
+      </tr>
+    {% endfor %}
+</tbody>
+
+</table>
